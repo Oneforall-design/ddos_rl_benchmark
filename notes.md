@@ -1,0 +1,28 @@
+## 🟦 **Cadrage du projet**
+
+### Contexte
+Le projet s'inscrit dans le cadre d'une étude sur la détection et la mitigation des attaques DDoS (Distributed Denial of Service) à l'aide de techniques d'apprentissage par renforcement (RL). L'objectif est d'évaluer et de comparer différentes stratégies RL pour protéger un réseau simulé contre des attaques DDoS.
+
+### Objectifs
+- Implémenter un environnement de simulation pour les attaques DDoS.
+- Développer plusieurs agents RL capables de détecter et de réagir aux attaques.
+- Comparer les performances des agents selon des critères définis (taux de détection, temps de réaction, impact sur le réseau).
+- Documenter les résultats et proposer des pistes d'amélioration.
+
+### Contraintes
+- Utiliser Python et des bibliothèques RL standards (e.g., OpenAI Gym, Stable Baselines).
+- Assurer la reproductibilité des expériences.
+- Respecter un cadre éthique dans la simulation des attaques.
+
+### Livrables
+- Code source complet et documenté.
+- Rapport détaillé présentant la méthodologie, les résultats et les analyses.
+- Présentation orale synthétisant les points clés du projet.
+
+### Planification
+1. Recherche bibliographique et définition de l'environnement (Semaine 1-2)
+2. Implémentation des agents RL (Semaine 3-5)
+3. Expérimentations et collecte des données (Semaine 6-7)
+4. Analyse des résultats et rédaction du rapport (Semaine 8-9)
+5. Préparation de la présentation finale (Semaine 10)
+
