@@ -1,5 +1,3 @@
-
-
 # 📘 **Détection d’attaques DDoS par Apprentissage par Renforcement (PPO vs Q-Learning)**
 
 ---
@@ -25,6 +23,15 @@ Ce projet vise à comparer l’efficacité de deux algorithmes d’apprentissage
 
 ---
 
+## 🔷 Dataset CIC-DDoS2019
+
+Le projet utilise le dataset CIC-DDoS2019 (Canadian Institute for Cybersecurity).
+Le téléchargement se fait automatiquement via kagglehub :
+
+python -m src.data.download_cicddos2019
+
+---
+
 ## 🔷 4. Installation
 
 1. **Cloner le dépôt :**
@@ -41,6 +48,10 @@ Ce projet vise à comparer l’efficacité de deux algorithmes d’apprentissage
    ```bash
    pip install -r requirements.txt
    ```
+4. **Télécharger le dataset :**
+   ```bash
+   python -m src.data.download_cicddos2019
+   ```
 
 ---
 
@@ -48,15 +59,16 @@ Ce projet vise à comparer l’efficacité de deux algorithmes d’apprentissage
 
 ```
 ddos_rl_benchmark/
-│
-├── data/                # Jeux de données simulés ou réels
-├── envs/                # Définition de l’environnement RL
-├── agents/              # Implémentations PPO et Q-Learning
-├── notebooks/           # Analyses et visualisations
-├── results/             # Résultats et métriques d’expériences
-├── main.py              # Script principal pour lancer les expériences
-├── requirements.txt     # Dépendances Python
-└── README.md            # Ce fichier
+│── data/
+│   └── raw/
+│── src/
+│   ├── agents/
+│   ├── envs/
+│   └── data/
+│── main.py
+│── notes.md
+│── README.md
+│── requirements.txt
 ```
 
 ---

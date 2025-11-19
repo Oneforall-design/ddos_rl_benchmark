@@ -26,3 +26,40 @@ Le projet s'inscrit dans le cadre d'une étude sur la détection et la mitigatio
 4. Analyse des résultats et rédaction du rapport (Semaine 8-9)
 5. Préparation de la présentation finale (Semaine 10)
 
+## 🟦 Phase 1 — Mise en place du projet
+
+### Création de l’environnement Python
+Un environnement virtuel a été créé avec :
+```
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+```
+
+### Installation des dépendances
+Les dépendances suivantes ont été installées :
+```
+pip install numpy pandas matplotlib seaborn scikit-learn
+pip install gymnasium
+pip install stable-baselines3
+pip install kagglehub
+pip install pyarrow
+```
+
+### Structure du projet
+Mise en place de l’architecture standard :
+src/
+    agents/
+    envs/
+    data/
+data/raw/
+
+### Téléchargement du dataset CIC-DDoS2019
+Le dataset a été téléchargé automatiquement grâce au script :
+python -m src.data.download_cicddos2019
+
+### Test de lecture
+Un test dans main.py a permis de confirmer la lecture d’un fichier Parquet :
+```
+df = pd.read_parquet("data/raw/cicddos2019/UDP-training.parquet")
+```
