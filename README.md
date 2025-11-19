@@ -71,6 +71,16 @@ ddos_rl_benchmark/
 │── requirements.txt
 ```
 
+*Note : Avant d’entraîner les agents, il est nécessaire de prétraiter les données.*
+
+### 🔷 Phase 2 — Prétraitement
+
+Avant l’entraînement des agents, lancer le pipeline de prétraitement :
+```
+python -m src.data.preprocessing
+```
+Cela génère automatiquement les fichiers normalisés dans `data/processed/`.
+
 ---
 
 ## 🔷 6. Utilisation

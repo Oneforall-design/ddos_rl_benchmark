@@ -63,3 +63,74 @@ Un test dans main.py a permis de confirmer la lecture d’un fichier Parquet :
 ```
 df = pd.read_parquet("data/raw/cicddos2019/UDP-training.parquet")
 ```
+
+## 🟦 Phase 2 — Prétraitement & représentation des états RL
+
+### 🎯 Objectifs
+- Charger et fusionner les fichiers bruts du dataset CIC-DDoS2019.  
+- Nettoyer, sélectionner et normaliser les features.  
+- Structurer les données sous une forme exploitable pour l'apprentissage par renforcement.
+
+### 🔧 Chargement des données brutes
+Le pipeline complet de prétraitement est implémenté dans :
+```
+src/data/preprocessing.py
+```
+
+Le chargement fusionne automatiquement tous les fichiers `.parquet` du dossier :
+```
+data/raw/cicddos2019/
+```
+
+Le dataset complet contient :
+- **431 371 lignes**  
+- **79 colonnes**
+
+### 🧽 Nettoyage des données
+- Suppression des colonnes entièrement vides  
+- Remplacement des valeurs manquantes (`NaN`) par **0**  
+- Ajout d’une colonne `__source_file__` pour la traçabilité  
+
+### 🧩 Sélection des features
+Une liste de features candidates a été définie.  
+Sur celles proposées, **8** étaient présentes et utilisées :
+
+- Flow Duration  
+- Tot Fwd Pkts  
+- Tot Bwd Pkts  
+- TotLen Fwd Pkts  
+- TotLen Bwd Pkts  
+- Flow Byts/s  
+- Flow Pkts/s  
+- Protocol  
+
+La cible est : **Label**
+
+### 📏 Normalisation & Split
+
+- Standardisation via **StandardScaler()**  
+- Découpage train/test : **80% / 20%**, stratifié  
+- Résultats :
+```
+X_train : (345096, 8)
+X_test  : (86275, 8)
+```
+
+### 💾 Sauvegarde des données prétraitées
+
+Les objets suivants sont générés dans :
+```
+data/processed/
+    X_train.npy
+    X_test.npy
+    y_train.npy
+    y_test.npy
+    scaler.pkl
+```
+
+### ▶️ Exécution du pipeline
+```
+python -m src.data.preprocessing
+```
+
+-------------------------------------
