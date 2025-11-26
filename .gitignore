@@ -16,9 +16,6 @@ __pycache__/
 *.log
 *.tmp
 
-# Notebooks
-.ipynb_checkpoints/
-
 # Données prétraitées lourdes
 data/processed/*.joblib
 data/processed/*.npy
