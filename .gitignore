@@ -27,6 +27,4 @@ models/
 
 # Sorties d'entraînement (tensorboard, etc.)
 runs/
-
-# Rapports locaux
-reports/
+figures/
